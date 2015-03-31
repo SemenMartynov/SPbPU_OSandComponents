@@ -1,0 +1,135 @@
+\documentclass{beamer}
+
+\usepackage{cmap}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\mode<presentation> {
+\usetheme{Madrid}
+\setbeamertemplate{caption}[numbered]
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+\title[Системное программирование]{Процесс загрузки GNU/Linux}
+
+\author{Мартынов Семён}
+\institute[СПб ПУ]
+{
+Санкт-Петербургский политехнический университет Петра Великого\\
+\medskip
+\textit{semen.martynov@gmail.com}
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Содержание}
+\tableofcontents
+\end{frame}
+
+%------------------------------------------------
+\section{Этапы загрузки}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Введение}
+
+Процесс загрузки выполняет следующие шаги:
+\begin{itemize}
+\item POST (Power On Self Test)
+\pause
+\item BIOS - загружает boot-loader
+\pause
+\item boot-loader (512 байт) - загружает grub
+\pause
+\item GRUB - загружает ядро и initramfs
+\pause
+\item Ядро ищет и стартует оборудование
+\pause
+\item initramfs (/sbin/init) готовит всё для запуска ОС
+\pause
+\item Change Root на настоящую систему
+\pause
+\item /sbin/init настоящей системы запускает программы.
+\pause
+\item Стартует getty или даже gdm
+\pause
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\section{Простейший boot-loader}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Простейший boot-loader}
+
+
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Шаблон линкера}
+
+
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Компиляция}
+
+
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Тест}
+
+
+
+\end{frame}
+
+%------------------------------------------------
+\section{Настоящий загрузчик}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Настоящий загрузчик}
+
+
+
+\end{frame}
+
+%------------------------------------------------
+\section{Вопросы}
+%------------------------------------------------
+
+\begin{frame}
+\begin{minipage}[t][.8\textheight]{\textwidth}
+	\vspace{5em}
+    {\Huge{\centerline{Вопросы?}}}
+
+    \vfill
+
+    Исходные коды:\\ \url{https://github.com/SemenMartynov/SPbPU_OSandComponents}
+\end{minipage}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
