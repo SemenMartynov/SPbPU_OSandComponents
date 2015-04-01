@@ -73,7 +73,33 @@
 \begin{frame}
 \frametitle{Простейший boot-loader}
 
+\begin{figure}
+\includegraphics[scale=0.5]{res/mbr}
+\end{figure}
 
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Простейший boot-loader: проблемы}
+Код не будет работать!
+\vspace{3em}
+\pause
+
+Проблемы:
+\begin{itemize}
+\item pеальный режим работы процессора
+\item elf файл
+\end{itemize}
+\vspace{3em}
+\pause
+
+Решения:
+\begin{itemize}
+\item \begin{verbatim}__asm__(".code16gcc\n");\end{verbatim}
+\item специальный шаблон линкера
+\end{itemize}
 
 \end{frame}
 
@@ -82,7 +108,9 @@
 \begin{frame}
 \frametitle{Шаблон линкера}
 
-
+\begin{figure}
+\includegraphics[scale=0.4]{res/linker}
+\end{figure}
 
 \end{frame}
 
@@ -91,7 +119,16 @@
 \begin{frame}
 \frametitle{Компиляция}
 
-
+\begin{itemize}
+\item[\$]gcc -c -g -Os -m32 -march=i686 -ffreestanding -Wall -Werror -I. -o mbr.o mbr.c
+\item[\$]ld -static -melf\_i386 -Tlinker.ld -nostdlib --nmagic -o mbr.elf mbr.o
+\item[\$]objcopy -O binary mbr.elf mbr.bin
+\vspace{3em}
+\item[\$]dd if=/dev/zero of=floppy.img bs=1024 count=1440
+\item[\$]dd if=mbr.bin of=floppy.img bs=1 count=512 conv=notrunc
+\vspace{3em}
+\item[\$]qemu-system-i386 -fda floppy.img -boot a
+\end{itemize}
 
 \end{frame}
 
@@ -100,7 +137,9 @@
 \begin{frame}
 \frametitle{Тест}
 
-
+\begin{figure}
+\includegraphics[scale=0.48]{res/qemu}
+\end{figure}
 
 \end{frame}
 
