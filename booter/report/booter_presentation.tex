@@ -40,13 +40,18 @@
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Введение}
+\frametitle{Этапы загрузки}
 
 Процесс загрузки выполняет следующие шаги:
 \begin{itemize}
-\item POST (Power On Self Test)
+\item{[ Power On => ] Reset CPU (код процессора) \\
+Передача управления на 0xffff0 [cs = 0xf000, ip = 0xfff0] - BIOS SC\\
+Power-on self-test (POST) POST (Power On Self Test)}
 \pause
-\item BIOS - загружает boot-loader
+\item{Опредление устройств с собственными BIOS и их инициализация\\
+Memory Test, настройка параметров устройств\\
+Выбор загрузочного устройства\\
+Передача управления загрузчику (Jump at 0x7c00)}
 \pause
 \item boot-loader (512 байт) - загружает grub
 \pause
@@ -61,8 +66,18 @@
 \item /sbin/init настоящей системы запускает программы.
 \pause
 \item Стартует getty или даже gdm
-\pause
 \end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Процесс загрузки}
+
+\begin{figure}
+\includegraphics[scale=0.5]{res/bootProcess}
+\end{figure}
 
 \end{frame}
 
@@ -74,7 +89,7 @@
 \frametitle{Простейший boot-loader}
 
 \begin{figure}
-\includegraphics[scale=0.5]{res/mbr}
+\includegraphics[scale=0.5]{res/mbrc}
 \end{figure}
 
 \end{frame}
@@ -140,17 +155,6 @@
 \begin{figure}
 \includegraphics[scale=0.48]{res/qemu}
 \end{figure}
-
-\end{frame}
-
-%------------------------------------------------
-\section{Настоящий загрузчик}
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Настоящий загрузчик}
-
-
 
 \end{frame}
 
