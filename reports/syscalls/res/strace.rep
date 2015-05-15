@@ -1,0 +1,46 @@
+execve("./sched", ["./sched"], [/* 27 vars */]) = 0
+brk(0)                                  = 0xd3f000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe49bdb4000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=144114, ...}) = 0
+mmap(NULL, 144114, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe49bd90000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\37\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1840928, ...}) = 0
+mmap(NULL, 3949248, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe49b7cf000
+mprotect(0x7fe49b98a000, 2093056, PROT_NONE) = 0
+mmap(0x7fe49bb89000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ba000) = 0x7fe49bb89000
+mmap(0x7fe49bb8f000, 17088, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe49bb8f000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe49bd8f000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe49bd8d000
+arch_prctl(ARCH_SET_FS, 0x7fe49bd8d740) = 0
+mprotect(0x7fe49bb89000, 16384, PROT_READ) = 0
+mprotect(0x600000, 4096, PROT_READ)     = 0
+mprotect(0x7fe49bdb6000, 4096, PROT_READ) = 0
+munmap(0x7fe49bd90000, 144114)          = 0
+sched_getscheduler(0)                   = 0 (SCHED_OTHER)
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 10), ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe49bdb3000
+write(1, "start policy = 0\n", 17start policy = 0
+)      = 17
+sched_get_priority_min(SCHED_FIFO)      = 1
+sched_get_priority_max(SCHED_FIFO)      = 99
+sched_get_priority_min(SCHED_FIFO)      = 1
+sched_get_priority_max(SCHED_FIFO)      = 99
+write(1, "max priority = 99, min priority "..., 54max priority = 99, min priority = 1, my priority = 50
+) = 54
+sched_setscheduler(0, SCHED_FIFO, { 50 }) = 0
+sched_yield()                           = 0
+sched_get_priority_max(SCHED_FIFO)      = 99
+sched_setparam(0, { 99 })               = 0
+sched_getparam(0, { 99 })               = 0
+write(1, "I am running at priority 99\n", 28I am running at priority 99
+) = 28
+exit_group(28)                          = ?
++++ exited with 28 +++
+
