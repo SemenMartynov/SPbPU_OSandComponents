@@ -1,0 +1,10 @@
+Apr 23 21:28:29 spb netmonitor[5776]: message repeated 3043 times: [ enp2s0:#012#011Receive 1535932378  bytes (1111392 packets)#012#011Transmit 202177932  bytes (700394 packets)]
+Apr 23 21:28:29 spb netmonitor[5776]: enp2s0:#012#011Receive 1535932378  bytes (1111392 packets)#012#011Transmit 202178497  bytes (700395 packets)
+Apr 23 21:28:29 spb netmonitor[5776]: message repeated 25 times: [ enp2s0:#012#011Receive 1535932378  bytes (1111392 packets)#012#011Transmit 202178497  bytes (700395 packets)]
+Apr 23 21:28:29 spb netmonitor[5776]: enp2s0:#012#011Receive 1535932444  bytes (1111393 packets)#012#011Transmit 202178497  bytes (700395 packets)
+Apr 23 21:28:29 spb netmonitor[5776]: message repeated 126 times: [ enp2s0:#012#011Receive 1535932444  bytes (1111393 packets)#012#011Transmit 202178497  bytes (700395 packets)]
+Apr 23 21:28:29 spb netmonitor[5776]: enp2s0:#012#011Receive 1535932738  bytes (1111394 packets)#012#011Transmit 202178497  bytes (700395 packets)
+Apr 23 21:28:29 spb netmonitor[5776]: message repeated 12 times: [ enp2s0:#012#011Receive 1535932738  bytes (1111394 packets)#012#011Transmit 202178497  bytes (700395 packets)]
+Apr 23 21:28:29 spb netmonitor[5776]: enp2s0:#012#011Receive 1535932738  bytes (1111394 packets)#012#011Transmit 202178563  bytes (700396 packets)
+Apr 23 21:28:29 spb netmonitor[5776]: message repeated 12 times: [ enp2s0:#012#011Receive 1535932738  bytes (1111394 packets)#012#011Transmit 202178563  bytes (700396 packets)]
+Apr 23 21:28:29 spb netmonitor[5776]: enp2s0:#012#011Receive 1535933590  bytes (1111395 packets)#012#011Transmit 202178629  bytes (700397 packets)
